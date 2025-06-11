@@ -8,3 +8,4 @@ python-jose[cryptography]
 sentence-transformers
 numpy
 scikit-learn
+email-validator
