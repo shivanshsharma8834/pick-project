@@ -9,3 +9,4 @@ sentence-transformers
 numpy
 scikit-learn
 email-validator
+python-multipart
