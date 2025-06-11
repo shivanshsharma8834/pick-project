@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+sqlalchemy
+passlib
+bcrypt==3.2.0  # Pinned to a stable version to fix DLL issue
+python-jose[cryptography]
+sentence-transformers
+numpy
+scikit-learn

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Picks Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Werbose</div>
+        <nav class="navbar">
+            <a href="#" class="nav-link active" data-section="recommendations-section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-link" data-section="purchase-history-section">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>History</span>
+            </a>
+            <a href="#" class="nav-link" data-section="user-details-section" id="user-details-nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>Profile</span>
+            </a>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="auth-btn" id="auth-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                <span>Login</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Section 1: Recommendations -->
+        <section id="recommendations-section" class="content-section active">
+            <div class="page-header">
+                <h1 id="welcome-title">Your Personal Shopping Agent</h1>
+                <p id="welcome-subtitle">Select a demo profile or login for your personalized experience.</p>
+                <select id="user-dropdown" aria-label="Select a User">
+                    <option value="">-- Select Demo Profile --</option>
+                </select>
+            </div>
+            <div class="card-grid" id="recommendation-grid"></div>
+        </section>
+
+        <!-- Section 2: Purchase History -->
+        <section id="purchase-history-section" class="content-section">
+             <div class="page-header">
+                <h1 id="history-title">Your Purchase History</h1>
+            </div>
+            <div class="card-grid" id="purchase-history-grid"></div>
+        </section>
+
+        <!-- Section 3: User Details -->
+        <section id="user-details-section" class="content-section">
+             <div class="page-header">
+                <h1>User Profile</h1>
+            </div>
+            <div class="profile-card-container" id="profile-card-container">
+                <!-- User details card will be injected here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Werbose Inc. All rights reserved.</p><br>
+        <p>Made with 🧡 from India</p>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" aria-label="Close modal">×</button>
+            <div class="modal-tabs">
+                <button class="tab-link active" data-tab="login">Login</button>
+                <button class="tab-link" data-tab="register">Register</button>
+            </div>
+            <div id="login-tab" class="tab-content active">
+                <form id="login-form">
+                    <h2>Welcome Back</h2>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="form-btn">Login</button>
+                </form>
+            </div>
+            <div id="register-tab" class="tab-content">
+                <form id="register-form">
+                    <h2>Create an Account</h2>
+                     <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <button type="submit" class="form-btn">Register</button>
+                </form>
+            </div>
+            <p id="auth-error" class="error-message"></p>
+        </div>
+    </div>
+    
+    <!-- This hidden input is for the theme toggle checkbox logic -->
+    <input type="checkbox" id="theme-checkbox" style="display:none;">
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

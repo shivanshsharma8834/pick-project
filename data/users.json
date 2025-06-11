@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "email": "alice@example.com",
+    "last_viewed_product_id": 201,
+    "purchase_history": [
+      {
+        "product_id": 202,
+        "purchase_date": "2023-10-15"
+      },
+      {
+        "product_id": 302,
+        "purchase_date": "2023-09-01"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "email": "bob@example.com",
+    "last_viewed_product_id": 101,
+    "purchase_history": [
+      {
+        "product_id": 400,
+        "purchase_date": "2023-10-20"
+      },
+      {
+        "product_id": 250,
+        "purchase_date": "2023-11-05"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "email": "charlie@example.com",
+    "last_viewed_product_id": 302,
+    "purchase_history": [
+      {
+        "product_id": 301,
+        "purchase_date": "2023-11-01"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Danny",
+    "email": "danny@example.com",
+    "last_viewed_product_id": 350,
+    "last_purchased_product_id": 200,
+    "purchase_history": [
+      {
+        "product_id": 400,
+        "purchase_date": "2023-08-20"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Eva",
+    "email": "eva@example.com",
+    "last_viewed_product_id": 500,
+    "last_purchased_product_id": 400,
+    "purchase_history": [
+      {
+        "product_id": 101,
+        "purchase_date": "2023-10-05"
+      },
+      {
+        "product_id": 600,
+        "purchase_date": "2023-09-15"
+      }
+    ]
+  }
+]
