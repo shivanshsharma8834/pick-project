@@ -96,3 +96,7 @@ async def get_demo_user_recommendations(user_id: int):
 @app.get("/api/products", tags=["Products"])
 async def get_all_products():
     return load_products()
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
